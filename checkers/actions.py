@@ -1,30 +1,48 @@
- # PLayers
-checkers.player1 = 'X'  
-checkers.player2 = 'O'  
-checkers.current_player = checkers.player1  
+def is_valid_move(board, start, end, player):
+    start_row, start_col = start
+    end_row, end_col = end
 
-def print_board(checkers):
-    for row in checkers.board:
-        print(' '.join(row))
+    if not (0 <= start_row < 8 and 0 <= start_col < 8):
+        return False
 
-def is_valid_move(checkers, start, end):
-    # See if that move can be done 
-    pass
+    if not (0 <= end_row < 8 and 0 <= end_col < 8):
+        return False
 
-def make_move(checkers, start, end):
-    # How to get the movement made 
-    pass
+    if board[end_row][end_col] != '_':
+        return False
 
-def switch_player(checkers):
-    # Switch Player
-    if checkers.current_player == checkers.player1:
-        checkers.current_player = checkers.player2
+  
+    if player == 'X':
+        if end_row < start_row or abs(end_row - start_row) != 1 or abs(end_col - start_col) != 1:
+            return False
+    elif player == 'O':
+        if end_row > start_row or abs(end_row - start_row) != 1 or abs(end_col - start_col) != 1:
+            return False
+    
+    return True
+
+def make_move(board, start, end, player):
+    start_row, start_col = start
+    end_row, end_col = end
+
+
+    board[start_row][start_col] = '_'
+    board[end_row][end_col] = player
+
+def switch_player(current_player):
+    if current_player == 'X':
+        return 'O'
     else:
-        checkers.current_player = checkers.player1
+        return 'X'
 
-def is_winner(checkers):
-       
-        
+def is_winner(board, player):
+    
+    for row in board:
+        for cell in row:
+            if cell == switch_player(player):
+                return False
+    return True
 
-    game = CheckersGame()
-game.print_board()
+
+
+
