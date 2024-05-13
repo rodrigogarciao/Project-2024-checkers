@@ -16,3 +16,4 @@ def print_board(board):
         print(' '.join(row))
 
         
+#Idea of the board got it from online link in the sourcs 

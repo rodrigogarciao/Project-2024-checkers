@@ -13,5 +13,5 @@ def is_winner(board, player):
     return True
 print("IF this phrase prints it means that the code and the functions are well defined ")
  
-           
+#Proving that all that worked printed what I Needed
    
