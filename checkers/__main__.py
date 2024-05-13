@@ -5,7 +5,7 @@ from actions import is_winner, is_valid_move, make_move, switch_player
 board = new_board()
 current_player = 'X'
 
-print("Welcome to Tic Tac Toe!")
+print("Welcome to Checkers!")
 print("Checkers is a game that is played with 2 persons and in this case is the only way to play it ")
 print("You can only do movements in diagonal and the point of this game is for you to eat the O or X that the player your going against is using ")
 print("You win when you have eaten all the pieces or the other player can`t make any movementes anymore ")
@@ -16,7 +16,7 @@ while not is_winner(board, current_player):
     
     start = input(f"Player {current_player}, enter start position (row, col): ").split(',')
     start = tuple(map(int, start))
-    end = input(f"Player {current_player}, enter end position (row, col): ").split(',')
+    end = input(f"Player {current_player}, enter end position (row,3 col): ").split(',')
     end = tuple(map(int, end))
     
     if is_valid_move(board, start, end, current_player):
