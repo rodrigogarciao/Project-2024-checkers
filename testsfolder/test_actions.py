@@ -4,14 +4,16 @@ def switch_player(current_player):
     else:
         return 'X'
 
-def is_winner(board, player):
-    
-    for row in board:
-        for cell in row:
-            if cell == switch_player(player):
-                return False
-    return True
-print("IF this phrase prints it means that the code and the functions are well defined ")
- 
-#Proving that all that worked printed what I Needed
+def test_switch_player():
+    assert switch_player('X') == 'O'
+    assert switch_player('O') == 'X'
+
+    def make_move(board, start, end, player):
+     start_row, start_col = start
+    end_row, end_col = end
+
+    board[start_row][start_col] = '_'
+    board[end_row][end_col] = player
+
+
    
