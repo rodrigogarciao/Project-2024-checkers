@@ -4,7 +4,7 @@ from actions import is_winner, is_valid_move, make_move, switch_player
 
 board = new_board()
 current_player = 'X'
-#Ginving Instructions 
+#Ginving Instruction
 print("Welcome to Checkers!")
 print("Checkers is a game that is played with 2 persons and in this case is the only way to play it ")
 print("You can only do movements in diagonal and the point of this game is for you to eat the O or X that the player your going against is using ")
